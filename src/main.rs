@@ -1,11 +1,14 @@
 #![allow(arithmetic_overflow)]
 
-use crate::md5::md5_runner;
 
 mod elliptic;
 mod rc4;
 mod md5;
+mod pwcase4;
+mod hamming;
 
 fn main() {
-    md5_runner();
+    // let res = pwcase4::probability(1f64/4f64, 30, 256);
+    // println!("{}", res)
+    hamming::hamming_runner();
 }

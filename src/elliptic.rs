@@ -1,7 +1,7 @@
 pub(crate) fn add_points(p1: (i32, i32), p2: (i32, i32), a: i32, modulus: i32) -> (i32, i32) {
-    let m;
     // println!("{:?}", p1.1 - p2.1);
     // println!("{:?}", p2);
+    let m;
     if p1 != p2 {
         m = special_modulus((p2.1 - p1.1) * modular_inverse(p2.0 - p1.0, modulus), modulus);
     } else {
@@ -44,7 +44,7 @@ pub fn modular_inverse(n: i32, modulus: i32) -> i32 {
 ///
 ///
 pub fn special_modulus(n: i32, modulus: i32) -> i32 {
-    return if n >= 0 {
+    if n >= 0 {
         n % modulus
     } else {
         modulus + (n % modulus)
